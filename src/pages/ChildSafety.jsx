@@ -107,6 +107,10 @@ const ChildSafety = () => {
         <div className="text-white/60 text-sm font-medium">
           © {new Date().getFullYear()} BlitzDate
         </div>
+        <div className="flex justify-center gap-6 mt-4">
+           <Link to="/delete-account" className="text-white/60 hover:text-white font-medium transition-colors">Delete Account</Link>
+           <a href="mailto:info@blitzdate.app" className="text-white/60 hover:text-white font-medium transition-colors">Contact</a>
+        </div>
       </footer>
     </div>
   );

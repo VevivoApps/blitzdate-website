@@ -283,6 +283,7 @@ function Home() {
               <a href="https://www.iubenda.com/privacy-policy/65548284" className="text-white/60 hover:text-white font-medium transition-colors" target="_blank" rel="noopener noreferrer">Privacy</a>
               <a href="https://www.iubenda.com/terms-and-conditions/65548284" className="text-white/60 hover:text-white font-medium transition-colors" target="_blank" rel="noopener noreferrer">Terms</a>
               <Link to="/child-safety" className="text-white/60 hover:text-white font-medium transition-colors">Child Safety</Link>
+              <Link to="/delete-account" className="text-white/60 hover:text-white font-medium transition-colors">Delete Account</Link>
               <a href="mailto:info@blitzdate.app" className="text-white/60 hover:text-white font-medium transition-colors">Contact</a>
             </div>
           </footer>

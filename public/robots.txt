@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://blitzdate.app/sitemap.xml

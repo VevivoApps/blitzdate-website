@@ -93,8 +93,8 @@ const ChildSafety = () => {
             </p>
             <div className="bg-brand-magenta/20 p-6 rounded-2xl border border-brand-magenta/30 inline-block">
               <p className="font-bold text-white">Email Contact:</p>
-              <a href="mailto:info@blitzdate.app" className="text-brand-yellow hover:text-white text-xl font-bold transition-colors">
-                info@blitzdate.app
+              <a href="mailto:support@blitzdate.app" className="text-brand-yellow hover:text-white text-xl font-bold transition-colors">
+                support@blitzdate.app
               </a>
               <p className="text-sm text-white/60 mt-2">Please include "Child Safety" in the subject line for expedited review.</p>
             </div>

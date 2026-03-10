@@ -9,7 +9,7 @@ function Footer({ className = '', maxWidthClass = 'max-w-4xl', contentPaddingCla
 
   return (
     <footer className={className}>
-      <div className={`w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-10 gap-y-8 text-left ${maxWidthClass} mx-auto ${contentPaddingClass}`}>
+      <div className={`w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-6 sm:gap-y-8 ${maxWidthClass} mx-auto ${contentPaddingClass}`}>
         <div>
           <div className="text-white/40 text-xs font-bold uppercase tracking-wider mb-3">Legal</div>
           <div className="space-y-2">
@@ -21,11 +21,11 @@ function Footer({ className = '', maxWidthClass = 'max-w-4xl', contentPaddingCla
         <div>
           <div className="text-white/40 text-xs font-bold uppercase tracking-wider mb-3">Social</div>
           <div className="space-y-2">
-            <a href="https://www.instagram.com/blitzdate/" className="text-white/60 hover:text-white font-medium transition-colors inline-flex items-center gap-2" target="_blank" rel="noopener noreferrer" aria-label="BlitzDate on Instagram">
+            <a href="https://www.instagram.com/blitzdate/" className="text-white/60 hover:text-white font-medium transition-colors flex sm:inline-flex items-center justify-center sm:justify-start gap-2" target="_blank" rel="noopener noreferrer" aria-label="BlitzDate on Instagram">
               <Instagram className="w-4 h-4" />
               Instagram
             </a>
-            <a href="https://www.linkedin.com/company/blitzdate-app/" className="text-white/60 hover:text-white font-medium transition-colors inline-flex items-center gap-2" target="_blank" rel="noopener noreferrer" aria-label="BlitzDate on LinkedIn">
+            <a href="https://www.linkedin.com/company/blitzdate-app/" className="text-white/60 hover:text-white font-medium transition-colors flex sm:inline-flex items-center justify-center sm:justify-start gap-2" target="_blank" rel="noopener noreferrer" aria-label="BlitzDate on LinkedIn">
               <Linkedin className="w-4 h-4" />
               LinkedIn
             </a>
@@ -36,10 +36,10 @@ function Footer({ className = '', maxWidthClass = 'max-w-4xl', contentPaddingCla
           <div className="text-white/40 text-xs font-bold uppercase tracking-wider mb-3">Safety</div>
           <div className="space-y-2">
             {showChildSafety && (
-              <Link to="/child-safety" className="text-white/60 hover:text-white font-medium transition-colors inline-block">Child Safety</Link>
+              <Link to="/child-safety" className="text-white/60 hover:text-white font-medium transition-colors block sm:inline-block">Child Safety</Link>
             )}
             {showDeleteAccount && (
-              <Link to="/delete-account" className="text-white/60 hover:text-white font-medium transition-colors inline-block">Delete Account</Link>
+              <Link to="/delete-account" className="text-white/60 hover:text-white font-medium transition-colors block sm:inline-block">Delete Account</Link>
             )}
           </div>
         </div>
@@ -47,15 +47,15 @@ function Footer({ className = '', maxWidthClass = 'max-w-4xl', contentPaddingCla
         <div>
           <div className="text-white/40 text-xs font-bold uppercase tracking-wider mb-3">Support</div>
           <div className="space-y-2">
-            <button type="button" onClick={() => window.blitzdateOpenCookieSettings?.()} className="text-white/60 hover:text-white font-medium transition-colors text-left">
+            <button type="button" onClick={() => window.blitzdateOpenCookieSettings?.()} className="text-white/60 hover:text-white font-medium transition-colors block w-full sm:w-auto">
               Cookie Settings
             </button>
-            <a href="mailto:info@blitzdate.app" className="text-white/60 hover:text-white font-medium transition-colors inline-block">Contact</a>
+            <a href="mailto:info@blitzdate.app" className="text-white/60 hover:text-white font-medium transition-colors block sm:inline-block">Contact</a>
           </div>
         </div>
       </div>
 
-      <div className="mt-10 text-white/50 text-xs font-medium text-center">
+      <div className="mt-8 sm:mt-10 text-white/50 text-xs font-medium text-center">
         © {new Date().getFullYear()} BlitzDate
       </div>
     </footer>

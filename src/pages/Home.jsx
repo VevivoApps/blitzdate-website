@@ -369,7 +369,7 @@ function Home() {
             </div>
           </FadeIn>
 
-          <Footer className="mt-24 pt-12 border-t border-white/10 w-full" />
+          <Footer className="mt-16 sm:mt-24 pt-10 sm:pt-12 border-t border-white/10 w-full text-center sm:text-left" />
         </div>
       </section>
     </div>

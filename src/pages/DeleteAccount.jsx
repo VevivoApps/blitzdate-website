@@ -116,7 +116,7 @@ const DeleteAccount = () => {
         </div>
       </div>
 
-      <Footer className="py-12 border-t border-white/10 text-center" maxWidthClass="max-w-3xl" contentPaddingClass="px-6" />
+      <Footer className="py-10 sm:py-12 border-t border-white/10 text-center" maxWidthClass="max-w-3xl" contentPaddingClass="px-6" />
     </div>
   );
 };

@@ -258,20 +258,20 @@ function Home() {
               Join the community of people who are done with waiting.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-               <button className="flex items-center justify-center gap-3 px-8 py-4 bg-brand-magenta text-white rounded-xl hover:bg-brand-yellow hover:text-brand-dark transition-colors w-full sm:w-auto shadow-lg shadow-brand-magenta/20">
+               <a href="https://link.blitzdate.app/sRed" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-8 py-4 bg-brand-magenta text-white rounded-xl hover:bg-brand-yellow hover:text-brand-dark transition-colors w-full sm:w-auto shadow-lg shadow-brand-magenta/20">
                   <Smartphone className="w-6 h-6" />
                   <div className="text-left">
                     <div className="text-xs font-semibold uppercase tracking-wider opacity-90">Download on</div>
                     <div className="text-lg font-bold">App Store</div>
                   </div>
-               </button>
-               <button className="flex items-center justify-center gap-3 px-8 py-4 bg-brand-magenta text-white rounded-xl hover:bg-brand-yellow hover:text-brand-dark transition-colors w-full sm:w-auto shadow-lg shadow-brand-magenta/20">
+               </a>
+               <a href="https://link.blitzdate.app/sRed" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-8 py-4 bg-brand-magenta text-white rounded-xl hover:bg-brand-yellow hover:text-brand-dark transition-colors w-full sm:w-auto shadow-lg shadow-brand-magenta/20">
                   <div className="text-2xl">▶</div>
                   <div className="text-left">
                     <div className="text-xs font-semibold uppercase tracking-wider opacity-90">Get it on</div>
                     <div className="text-lg font-bold">Google Play</div>
                   </div>
-               </button>
+               </a>
             </div>
           </FadeIn>
 
@@ -282,6 +282,9 @@ function Home() {
             <div className="flex gap-8">
               <a href="https://www.iubenda.com/privacy-policy/65548284" className="text-white/60 hover:text-white font-medium transition-colors" target="_blank" rel="noopener noreferrer">Privacy</a>
               <a href="https://www.iubenda.com/terms-and-conditions/65548284" className="text-white/60 hover:text-white font-medium transition-colors" target="_blank" rel="noopener noreferrer">Terms</a>
+              <button type="button" onClick={() => window.blitzdateOpenCookieSettings?.()} className="text-white/60 hover:text-white font-medium transition-colors">
+                Cookie Settings
+              </button>
               <Link to="/child-safety" className="text-white/60 hover:text-white font-medium transition-colors">Child Safety</Link>
               <Link to="/delete-account" className="text-white/60 hover:text-white font-medium transition-colors">Delete Account</Link>
               <a href="mailto:info@blitzdate.app" className="text-white/60 hover:text-white font-medium transition-colors">Contact</a>

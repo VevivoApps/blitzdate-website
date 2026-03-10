@@ -6,6 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="The dating app for people who value their time. No games. No endless swiping. Just real dates." />
     <title>BlitzDate - Skip the Wait, Spark a Date!</title>
+    <!-- Consent defaults BEFORE loading GA -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted'
+      });
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPJSW3CHEX"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-DPJSW3CHEX');
+    </script>
   </head>
   <body>
     <div id="root"></div>

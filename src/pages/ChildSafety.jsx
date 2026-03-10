@@ -109,6 +109,9 @@ const ChildSafety = () => {
         </div>
         <div className="flex justify-center gap-6 mt-4">
            <Link to="/delete-account" className="text-white/60 hover:text-white font-medium transition-colors">Delete Account</Link>
+           <button type="button" onClick={() => window.blitzdateOpenCookieSettings?.()} className="text-white/60 hover:text-white font-medium transition-colors">
+             Cookie Settings
+           </button>
            <a href="mailto:info@blitzdate.app" className="text-white/60 hover:text-white font-medium transition-colors">Contact</a>
         </div>
       </footer>

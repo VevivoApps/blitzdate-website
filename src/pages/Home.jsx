@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Smartphone, Heart, Clock, ConciergeBell } from 'lucide-react';
 import SEO from '../components/SEO';
-import { Link } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 const FadeIn = ({ children, delay = 0, direction = 'up', className = '' }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -369,21 +369,7 @@ function Home() {
             </div>
           </FadeIn>
 
-          <footer className="mt-24 pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-white/60 text-sm font-medium">
-              © {new Date().getFullYear()} BlitzDate
-            </div>
-            <div className="flex gap-8">
-              <a href="https://www.iubenda.com/privacy-policy/65548284" className="text-white/60 hover:text-white font-medium transition-colors" target="_blank" rel="noopener noreferrer">Privacy</a>
-              <a href="https://www.iubenda.com/terms-and-conditions/65548284" className="text-white/60 hover:text-white font-medium transition-colors" target="_blank" rel="noopener noreferrer">Terms</a>
-              <button type="button" onClick={() => window.blitzdateOpenCookieSettings?.()} className="text-white/60 hover:text-white font-medium transition-colors">
-                Cookie Settings
-              </button>
-              <Link to="/child-safety" className="text-white/60 hover:text-white font-medium transition-colors">Child Safety</Link>
-              <Link to="/delete-account" className="text-white/60 hover:text-white font-medium transition-colors">Delete Account</Link>
-              <a href="mailto:info@blitzdate.app" className="text-white/60 hover:text-white font-medium transition-colors">Contact</a>
-            </div>
-          </footer>
+          <Footer className="mt-24 pt-12 border-t border-white/10 w-full" />
         </div>
       </section>
     </div>

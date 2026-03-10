@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import Footer from '../components/Footer';
 
 const DeleteAccount = () => {
   useEffect(() => {
@@ -115,18 +116,7 @@ const DeleteAccount = () => {
         </div>
       </div>
 
-      <footer className="py-12 border-t border-white/10 text-center">
-        <div className="text-white/60 text-sm font-medium">
-          © {new Date().getFullYear()} BlitzDate
-        </div>
-        <div className="flex justify-center gap-6 mt-4">
-           <Link to="/child-safety" className="text-white/60 hover:text-white font-medium transition-colors">Child Safety</Link>
-           <button type="button" onClick={() => window.blitzdateOpenCookieSettings?.()} className="text-white/60 hover:text-white font-medium transition-colors">
-             Cookie Settings
-           </button>
-           <a href="mailto:info@blitzdate.app" className="text-white/60 hover:text-white font-medium transition-colors">Contact</a>
-        </div>
-      </footer>
+      <Footer className="py-12 border-t border-white/10 text-center" maxWidthClass="max-w-3xl" contentPaddingClass="px-6" />
     </div>
   );
 };

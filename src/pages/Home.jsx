@@ -82,13 +82,81 @@ function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const siteUrl = 'https://blitzdate.app';
+  const faqItems = [
+    {
+      question: 'What is BlitzDate?',
+      answer:
+        'BlitzDate is a dating app built for people who value their time. It focuses on real dates with active users instead of endless swiping.',
+    },
+    {
+      question: 'How is BlitzDate different from swipe-based apps?',
+      answer:
+        'BlitzDate emphasizes direct invites and real matches with a shared daily cycle. You see people who are active today and focus on quality over quantity.',
+    },
+    {
+      question: 'What does “active today” mean?',
+      answer:
+        'BlitzDate highlights people who have checked in today, so you are browsing a feed of users who are currently active.',
+    },
+    {
+      question: 'Do matches and messages disappear?',
+      answer:
+        'Yes. Matches and messages run on a shared 24-hour cycle that resets at the same time for everyone.',
+    },
+    {
+      question: 'Is BlitzDate only for adults?',
+      answer:
+        'Yes. BlitzDate is strictly for users aged 18 and older, and has a zero-tolerance policy against abuse and exploitation.',
+    },
+  ];
+
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'BlitzDate',
+      url: siteUrl,
+      email: 'info@blitzdate.app',
+      logo: `${siteUrl}/blitz_logo_icon.png`,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'BlitzDate',
+      url: siteUrl,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'MobileApplication',
+      name: 'BlitzDate',
+      applicationCategory: 'SocialNetworkingApplication',
+      operatingSystem: 'iOS, Android',
+      url: siteUrl,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqItems.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer,
+        },
+      })),
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-brand-purple text-white font-sans selection:bg-brand-magenta selection:text-white overflow-x-hidden">
       <SEO 
         title="BlitzDate - Skip the Wait, Spark a Date!"
         description="Join BlitzDate, the dating app for people who value their time. Real dates, active users, and no endless swiping. Download now!"
         keywords="dating app, real dates, no swiping, active users, same day dating, BlitzDate, date tonight, spontaneous dating"
-        url="https://blitzdate.app"
+        url={siteUrl}
+        image={`${siteUrl}/blitz_logo_icon.png`}
+        jsonLd={jsonLd}
       />
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-brand-purple/90 backdrop-blur-md border-b border-white/10 py-3 sm:py-4 shadow-lg' : 'bg-transparent py-4 sm:py-6'}`}>
@@ -151,7 +219,7 @@ function Home() {
                 <PhoneMockup className="rotate-3 md:rotate-6" splashColor="text-brand-yellow">
                   <img
                     src="/websreenshot1.jpg"
-                    alt="Feed Screen"
+                    alt="BlitzDate feed screen showing users active today"
                     className="w-full h-full object-cover"
                     draggable="false"
                   />
@@ -197,7 +265,7 @@ function Home() {
                 <PhoneMockup className="-rotate-3 md:-rotate-6" splashColor="text-brand-magenta">
                   <img
                     src="/webscreenshot2.png"
-                    alt="Likes Screen"
+                    alt="BlitzDate invites screen showing direct invites and matches"
                     className="w-full h-full object-cover"
                     draggable="false"
                   />
@@ -217,7 +285,7 @@ function Home() {
                 <PhoneMockup className="rotate-2 md:rotate-3" splashColor="text-brand-purple">
                   <img
                     src="/webscreenshot3.jpg"
-                    alt="Matches Screen"
+                    alt="BlitzDate matches screen showing time-limited daily conversations"
                     className="w-full h-full object-cover"
                     draggable="false"
                   />
@@ -242,6 +310,32 @@ function Home() {
         </div>
       </section>
 
+      <section className="py-16 sm:py-24 md:py-32 bg-white text-gray-900 relative overflow-hidden">
+        <div className="absolute -bottom-24 left-1/2 w-96 h-96 bg-brand-purple rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000 pointer-events-none"></div>
+
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="max-w-4xl mx-auto text-center mb-10 sm:mb-12">
+            <h2 className="mt-5 text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-gray-900 mb-4 sm:mb-6">
+              Frequently asked <span className="text-brand-magenta">questions</span>
+            </h2>
+          </div>
+
+          <div className="max-w-4xl mx-auto space-y-4">
+            {faqItems.map((item) => (
+              <details key={item.question} className="group rounded-3xl border border-brand-purple/15 bg-white p-5 sm:p-6 shadow-lg shadow-brand-purple/10">
+                <summary className="cursor-pointer list-none text-lg sm:text-xl font-black text-brand-purple flex items-center justify-between gap-4">
+                  <span className="text-left">{item.question}</span>
+                  <span className="shrink-0 w-10 h-10 rounded-full bg-brand-magenta/10 text-brand-magenta flex items-center justify-center text-2xl font-black group-open:rotate-45 transition-transform">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-4 text-gray-700 leading-relaxed">{item.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
 
 
       {/* Final CTA */}
@@ -249,7 +343,7 @@ function Home() {
         <div className="max-w-3xl mx-auto">
           <FadeIn direction="up">
             <div className="flex justify-center mb-6 sm:mb-8">
-               <img src="/blitz_logo_icon.png" alt="BlitzDate Logo" className="h-12 w-12 sm:h-16 sm:w-16 object-contain" />
+              <img src="/blitz_logo_icon.png" alt="BlitzDate Logo" className="h-12 w-12 sm:h-16 sm:w-16 object-contain" />
             </div>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-6 sm:mb-8 text-brand-yellow">
               Ready to date differently?
@@ -258,20 +352,20 @@ function Home() {
               Join the community of people who are done with waiting.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-               <a href="https://link.blitzdate.app/sRed" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-8 py-4 bg-brand-magenta text-white rounded-xl hover:bg-brand-yellow hover:text-brand-dark transition-colors w-full sm:w-auto shadow-lg shadow-brand-magenta/20">
-                  <Smartphone className="w-6 h-6" />
-                  <div className="text-left">
-                    <div className="text-xs font-semibold uppercase tracking-wider opacity-90">Download on</div>
-                    <div className="text-lg font-bold">App Store</div>
-                  </div>
-               </a>
-               <a href="https://link.blitzdate.app/sRed" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-8 py-4 bg-brand-magenta text-white rounded-xl hover:bg-brand-yellow hover:text-brand-dark transition-colors w-full sm:w-auto shadow-lg shadow-brand-magenta/20">
-                  <div className="text-2xl">▶</div>
-                  <div className="text-left">
-                    <div className="text-xs font-semibold uppercase tracking-wider opacity-90">Get it on</div>
-                    <div className="text-lg font-bold">Google Play</div>
-                  </div>
-               </a>
+              <a href="https://link.blitzdate.app/sRed" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-8 py-4 bg-brand-magenta text-white rounded-xl hover:bg-brand-yellow hover:text-brand-dark transition-colors w-full sm:w-auto shadow-lg shadow-brand-magenta/20">
+                <Smartphone className="w-6 h-6" />
+                <div className="text-left">
+                  <div className="text-xs font-semibold uppercase tracking-wider opacity-90">Download on</div>
+                  <div className="text-lg font-bold">App Store</div>
+                </div>
+              </a>
+              <a href="https://link.blitzdate.app/sRed" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-8 py-4 bg-brand-magenta text-white rounded-xl hover:bg-brand-yellow hover:text-brand-dark transition-colors w-full sm:w-auto shadow-lg shadow-brand-magenta/20">
+                <div className="text-2xl">▶</div>
+                <div className="text-left">
+                  <div className="text-xs font-semibold uppercase tracking-wider opacity-90">Get it on</div>
+                  <div className="text-lg font-bold">Google Play</div>
+                </div>
+              </a>
             </div>
           </FadeIn>
 

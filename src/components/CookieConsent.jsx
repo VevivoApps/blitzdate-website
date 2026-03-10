@@ -16,6 +16,7 @@ function saveConsent(consent) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...consent, ts: Date.now() }));
   } catch {
+    return;
   }
 }
 

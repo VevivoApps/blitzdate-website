@@ -7,12 +7,39 @@ const ChildSafety = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const siteUrl = 'https://blitzdate.app';
+  const pageUrl = `${siteUrl}/child-safety`;
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'BlitzDate',
+      url: siteUrl,
+      email: 'info@blitzdate.app',
+      logo: `${siteUrl}/blitz_logo_icon.png`,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Child Safety Standards - BlitzDate',
+      url: pageUrl,
+      isPartOf: {
+        '@type': 'WebSite',
+        name: 'BlitzDate',
+        url: siteUrl,
+      },
+      about: 'Child safety standards and reporting mechanisms for BlitzDate.',
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-brand-purple text-white font-sans selection:bg-brand-magenta selection:text-white overflow-x-hidden">
       <SEO 
         title="Child Safety Standards - BlitzDate"
         description="BlitzDate's commitment to child safety, reporting mechanisms, and zero-tolerance policy against abuse and exploitation."
-        url="https://blitzdate.app/child-safety"
+        url={pageUrl}
+        image={`${siteUrl}/blitz_logo_icon.png`}
+        jsonLd={jsonLd}
       />
       
       {/* Navigation */}
@@ -66,9 +93,9 @@ const ChildSafety = () => {
             <div className="bg-white/10 p-6 rounded-2xl border border-white/10">
               <h3 className="text-xl font-bold text-brand-yellow mb-2">How to Report in the App</h3>
               <ol className="list-decimal pl-6 space-y-2">
-                <li>Go to the user's profile or the chat conversation.</li>
-                <li>Tap the "Report" button (usually found in the top right menu).</li>
-                <li>Select "Underage User" or "Inappropriate Content" as the reason.</li>
+                <li>Go to the user&apos;s profile or the chat conversation.</li>
+                <li>Tap the &quot;Report&quot; button (usually found in the top right menu).</li>
+                <li>Select &quot;Underage User&quot; or &quot;Inappropriate Content&quot; as the reason.</li>
                 <li>Provide any additional details and submit.</li>
               </ol>
             </div>
@@ -96,7 +123,7 @@ const ChildSafety = () => {
               <a href="mailto:support@blitzdate.app" className="text-brand-yellow hover:text-white text-xl font-bold transition-colors">
                 support@blitzdate.app
               </a>
-              <p className="text-sm text-white/60 mt-2">Please include "Child Safety" in the subject line for expedited review.</p>
+              <p className="text-sm text-white/60 mt-2">Please include &quot;Child Safety&quot; in the subject line for expedited review.</p>
             </div>
           </section>
 

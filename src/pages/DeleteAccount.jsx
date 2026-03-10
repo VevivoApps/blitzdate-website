@@ -7,12 +7,39 @@ const DeleteAccount = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const siteUrl = 'https://blitzdate.app';
+  const pageUrl = `${siteUrl}/delete-account`;
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'BlitzDate',
+      url: siteUrl,
+      email: 'info@blitzdate.app',
+      logo: `${siteUrl}/blitz_logo_icon.png`,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Delete Account - BlitzDate',
+      url: pageUrl,
+      isPartOf: {
+        '@type': 'WebSite',
+        name: 'BlitzDate',
+        url: siteUrl,
+      },
+      about: 'How to delete a BlitzDate account and associated data.',
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-brand-purple text-white font-sans selection:bg-brand-magenta selection:text-white overflow-x-hidden">
       <SEO 
         title="Delete Account - BlitzDate"
         description="Instructions on how to delete your BlitzDate account and data."
-        url="https://blitzdate.app/delete-account"
+        url={pageUrl}
+        image={`${siteUrl}/blitz_logo_icon.png`}
+        jsonLd={jsonLd}
       />
       
       {/* Navigation */}

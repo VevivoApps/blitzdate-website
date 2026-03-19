@@ -13,8 +13,8 @@ function Footer({ className = '', maxWidthClass = 'max-w-4xl', contentPaddingCla
         <div>
           <div className="text-white/40 text-xs font-bold uppercase tracking-wider mb-3">Legal</div>
           <div className="space-y-2">
-            <a href="https://www.iubenda.com/privacy-policy/65548284" className="text-white/60 hover:text-white font-medium transition-colors block" target="_blank" rel="noopener noreferrer">Privacy</a>
-            <a href="https://www.iubenda.com/terms-and-conditions/65548284" className="text-white/60 hover:text-white font-medium transition-colors block" target="_blank" rel="noopener noreferrer">Terms</a>
+            <a href="https://www.iubenda.com/privacy-policy/21951478" className="text-white/60 hover:text-white font-medium transition-colors block" target="_blank" rel="noopener noreferrer">Privacy</a>
+            <a href="https://www.iubenda.com/terms-and-conditions/21951478" className="text-white/60 hover:text-white font-medium transition-colors block" target="_blank" rel="noopener noreferrer">Terms</a>
           </div>
         </div>
 

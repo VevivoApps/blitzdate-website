@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Smartphone, Heart, Clock, ConciergeBell } from 'lucide-react';
 import SEO from '../components/SEO';
 import Footer from '../components/Footer';
+import NewsletterForm from '../components/NewsletterForm';
 
 const FadeIn = ({ children, delay = 0, direction = 'up', className = '' }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -336,9 +337,15 @@ function Home() {
         </div>
       </section>
 
+      <section id="newsletter" className="py-16 sm:py-24 md:py-32 bg-brand-purple/5 text-gray-900 relative overflow-hidden">
+        <div className="absolute -top-24 left-1/2 w-96 h-96 bg-brand-purple rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob pointer-events-none"></div>
+        <div className="max-w-6xl mx-auto px-6">
+          <NewsletterForm />
+        </div>
+      </section>
 
 
-      {/* Final CTA */}
+
       <section id="download" className="py-20 sm:py-32 bg-brand-purple text-white text-center px-6">
         <div className="max-w-3xl mx-auto">
           <FadeIn direction="up">
